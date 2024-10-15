@@ -14,6 +14,8 @@ import {
 } from "@mui/material";
 import LinkedInIcon from '@mui/icons-material/LinkedIn'; // Import LinkedIn icon
 import GitHubIcon from '@mui/icons-material/GitHub'; // Import GitHub icon
+import PhoneIcon from '@mui/icons-material/Phone'; // Import Phone icon
+import EmailIcon from '@mui/icons-material/Email'; // Import Email icon
 
 const HomeContent = () => {
     return (
@@ -23,7 +25,8 @@ const HomeContent = () => {
                     Hello, my name&apos;s Aaron! {/* Use &apos; instead of ' */}
                 </Typography>
                 <Typography variant="h6" gutterBottom>
-                    +65 9366 1311 • lyl.aaron.98@gmail.com
+                    <PhoneIcon sx={{ mr: 1 }} /> +65 9366 1311 {/* Phone icon */}
+                    <EmailIcon sx={{ mr: 1, ml: 2 }} /> lyl.aaron.98@gmail.com {/* Email icon */}
                 </Typography>
                 <Typography variant="h6" gutterBottom>
                     <Button 
