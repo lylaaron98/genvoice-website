@@ -1,12 +1,35 @@
-import Link from 'next/link';
+"use client";
+
+import React from 'react';
+import { Button, AppBar, Toolbar, Typography } from '@mui/material';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
+    const router = useRouter(); // Use router for navigation
+
+    const handleNavigation = (path: string) => {
+        router.push(path); // Navigate to the specified path
+    };
+
     return (
-        <nav className="flex justify-between p-4 bg-gray-200">
-            <Link href="/">Home</Link>
-            <Link href="/login">Login</Link>
-            <Link href="/settings">Settings</Link>
-        </nav>
+        <AppBar position="static" sx={{ background: 'black' }}>
+            <Toolbar>
+                <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                    <Button color="inherit" onClick={() => handleNavigation('/')}>
+                        Home
+                    </Button>
+                </Typography>
+                <Button color="inherit" onClick={() => handleNavigation('/login')}>
+                    Login
+                </Button>
+                <Button color="inherit" onClick={() => handleNavigation('/settings')}>
+                    Settings
+                </Button>
+                <Button color="inherit">
+                    Logout
+                </Button>
+            </Toolbar>
+        </AppBar>
     );
 };
 
