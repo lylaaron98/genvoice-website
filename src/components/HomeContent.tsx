@@ -20,7 +20,7 @@ const HomeContent = () => {
         <Container component="main" maxWidth="md" sx={{ mt: 8 }}>
             <Paper elevation={3} sx={{ p: 4 }}>
                 <Typography variant="h4" component="h1" gutterBottom>
-                    Hello, my name's Aaron!
+                    Hello, my name&apos;s Aaron! {/* Use &apos; instead of ' */}
                 </Typography>
                 <Typography variant="h6" gutterBottom>
                     +65 9366 1311 • lyl.aaron.98@gmail.com
