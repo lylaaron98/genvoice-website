@@ -12,7 +12,8 @@ const LoginPage = () => {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        if (username === 'genvoice' && password === 'GenVoice123!') {
+        const storedPassword = localStorage.getItem("userPassword"); // Retrieve password from local storage
+        if (username === 'genvoice' && password === storedPassword) {
             router.push('/'); // Redirect to main page on successful login
         } else {
             setError('Invalid username or password');

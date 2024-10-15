@@ -1,17 +1,33 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Paper, Typography, TextField, Button, Alert } from '@mui/material';
 
 const SettingsPage = () => {
     const [newPassword, setNewPassword] = useState('');
+    const [currentPassword, setCurrentPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [storedPassword, setStoredPassword] = useState('');
+
+    useEffect(() => {
+        // Retrieve the stored password on component mount
+        const password = localStorage.getItem("userPassword");
+        if (password) {
+            setStoredPassword(password);
+        } else {
+            setStoredPassword('GenVoice123!'); // Default to the original password if none set
+        }
+    }, []);
 
     const handleChangePassword = (e: React.FormEvent) => {
         e.preventDefault();
-        if (newPassword) {
+        if (newPassword && currentPassword === storedPassword) {
+            localStorage.setItem("userPassword", newPassword); // Change password in local storage
             setMessage('Password changed successfully!');
             setNewPassword(''); // Clear input
+            setCurrentPassword(''); // Clear current password input
+        } else {
+            setMessage('Current password is incorrect or new password is empty');
         }
     };
 
@@ -22,6 +38,16 @@ const SettingsPage = () => {
                     Settings
                 </Typography>
                 <form onSubmit={handleChangePassword} noValidate>
+                    <TextField 
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        label="Current Password"
+                        type="password"
+                        value={currentPassword}
+                        onChange={(e) => setCurrentPassword(e.target.value)}
+                    />
                     <TextField 
                         variant="outlined"
                         margin="normal"
@@ -42,7 +68,7 @@ const SettingsPage = () => {
                         Change Password
                     </Button>
                     {message && (
-                        <Alert severity="success" sx={{ marginTop: 2 }}>
+                        <Alert severity={message.includes('successfully') ? "success" : "error"} sx={{ marginTop: 2 }}>
                             {message}
                         </Alert>
                     )}
