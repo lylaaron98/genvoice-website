@@ -15,7 +15,7 @@ const HomePage = () => {
         <Container component="main" maxWidth="md" sx={{ mt: 8 }}>
             <Paper elevation={3} sx={{ p: 4 }}>
                 <Typography variant="h4" component="h1" gutterBottom>
-                    Hello, my name's Aaron! And this is my profile page.
+                    Hello, my name's Aaron!
                 </Typography>
                 <Typography variant="h6" gutterBottom>
                     +65 9366 1311 • lyl.aaron.98@gmail.com
@@ -25,7 +25,7 @@ const HomePage = () => {
                         LinkedIn
                     </Button>{" "}
                     •{" "}
-                    <Button href="https://github.com/lylaaron98/genvoice-website" target="_blank" color="primary">
+                    <Button href="https://github.com/lylaaron98" target="_blank" color="primary">
                         GitHub
                     </Button>
                 </Typography>
@@ -78,15 +78,13 @@ const HomePage = () => {
                             <ListItemText 
                                 primary="International Data Corporation, Singapore: Custom Solutions Intern (Mar 2023 - Apr 2023)" 
                                 secondary={
-                                    <>
-                                        <List>
-                                            <ListItem>Managed and organized large datasets using Excel.</ListItem>
-                                            <ListItem>Created charts, graphs, and visualizations to present data in a clear and concise manner.</ListItem>
-                                            <ListItem>Assisted in the development of PowerPoint presentations for client meetings and internal use.</ListItem>
-                                            <ListItem>Conducted research on industry trends and provided insights to the Custom Solutions team.</ListItem>
-                                            <ListItem>Collaborated with team members to ensure timely and accurate delivery of projects.</ListItem>
-                                        </List>
-                                    </>
+                                    <List>
+                                        <ListItem>Managed and organized large datasets using Excel.</ListItem>
+                                        <ListItem>Created charts, graphs, and visualizations to present data in a clear and concise manner.</ListItem>
+                                        <ListItem>Assisted in the development of PowerPoint presentations for client meetings and internal use.</ListItem>
+                                        <ListItem>Conducted research on industry trends and provided insights to the Custom Solutions team.</ListItem>
+                                        <ListItem>Collaborated with team members to ensure timely and accurate delivery of projects.</ListItem>
+                                    </List>
                                 }
                             />
                         </ListItem>
@@ -94,14 +92,12 @@ const HomePage = () => {
                             <ListItemText 
                                 primary="DAISO Singapore, Singapore: Software Developer (Nov 2023 - Feb 2024)" 
                                 secondary={
-                                    <>
-                                        <List>
-                                            <ListItem>Developed and maintained an in-house utilities dashboard for Daiso Singapore, optimizing internal processes for various departments, using React JS for the frontend.</ListItem>
-                                            <ListItem>Customized features and modules to meet specific departmental needs, enhancing overall usability.</ListItem>
-                                            <ListItem>Implemented backend functionalities with Node.js, enabling seamless communication between the frontend and the MSS SQL database server.</ListItem>
-                                            <ListItem>Collaborated closely with department heads to understand evolving needs and priorities, aligning software solutions with business goals.</ListItem>
-                                        </List>
-                                    </>
+                                    <List>
+                                        <ListItem>Developed and maintained an in-house utilities dashboard for Daiso Singapore, optimizing internal processes for various departments, using React JS for the frontend.</ListItem>
+                                        <ListItem>Customized features and modules to meet specific departmental needs, enhancing overall usability.</ListItem>
+                                        <ListItem>Implemented backend functionalities with Node.js, enabling seamless communication between the frontend and the MSS SQL database server.</ListItem>
+                                        <ListItem>Collaborated closely with department heads to understand evolving needs and priorities, aligning software solutions with business goals.</ListItem>
+                                    </List>
                                 }
                             />
                         </ListItem>
@@ -109,15 +105,13 @@ const HomePage = () => {
                             <ListItemText 
                                 primary="Univers, Envision Group, Singapore: Frontend Software Engineer Intern (May 2024 - Dec 2024)" 
                                 secondary={
-                                    <>
-                                        <List>
-                                            <ListItem>Bug fixes and improvements for UI features.</ListItem>
-                                            <ListItem>Developed UI functions with ReactJS components and designed with Ant Design custom libraries.</ListItem>
-                                            <ListItem>Developed and maintained web applications and dashboards for projects, ensuring a user-friendly interface.</ListItem>
-                                            <ListItem>State management of software applications with agile methodology.</ListItem>
-                                            <ListItem>Collaborated with software engineers, designers, and managers across different teams internationally.</ListItem>
-                                        </List>
-                                    </>
+                                    <List>
+                                        <ListItem>Bug fixes and improvements for UI features.</ListItem>
+                                        <ListItem>Developed UI functions with ReactJS components and designed with Ant Design custom libraries.</ListItem>
+                                        <ListItem>Developed and maintained web applications and dashboards for projects, ensuring a user-friendly interface.</ListItem>
+                                        <ListItem>State management of software applications with agile methodology.</ListItem>
+                                        <ListItem>Collaborated with software engineers, designers, and managers across different teams internationally.</ListItem>
+                                    </List>
                                 }
                             />
                         </ListItem>

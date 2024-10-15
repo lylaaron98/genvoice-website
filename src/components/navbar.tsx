@@ -19,13 +19,10 @@ const Navbar = () => {
                         Home
                     </Button>
                 </Typography>
-                <Button color="inherit" onClick={() => handleNavigation('/login')}>
-                    Login
-                </Button>
                 <Button color="inherit" onClick={() => handleNavigation('/settings')}>
                     Settings
                 </Button>
-                <Button color="inherit">
+                <Button color="inherit" onClick={() => handleNavigation('/login')}>
                     Logout
                 </Button>
             </Toolbar>

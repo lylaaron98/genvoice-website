@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { Container, Paper, Typography, TextField, Button, Alert } from '@mui/material';
 
 const SettingsPage = () => {
     const [newPassword, setNewPassword] = useState('');
@@ -15,21 +16,39 @@ const SettingsPage = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-2xl font-bold">Settings</h1>
-            <form onSubmit={handleChangePassword} className="space-y-4">
-                <input 
-                    type="password" 
-                    value={newPassword} 
-                    onChange={(e) => setNewPassword(e.target.value)} 
-                    placeholder="New Password" 
-                    className="border p-2"
-                    required 
-                />
-                <button type="submit" className="bg-blue-500 text-white p-2">Change Password</button>
-                {message && <p className="text-green-500">{message}</p>}
-            </form>
-        </div>
+        <Container component="main" maxWidth="xs">
+            <Paper elevation={3} sx={{ padding: 4, marginTop: 8 }}>
+                <Typography variant="h5" component="h1" gutterBottom>
+                    Settings
+                </Typography>
+                <form onSubmit={handleChangePassword} noValidate>
+                    <TextField 
+                        variant="outlined"
+                        margin="normal"
+                        required
+                        fullWidth
+                        label="New Password"
+                        type="password"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                    />
+                    <Button 
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        sx={{ marginTop: 2 }}
+                    >
+                        Change Password
+                    </Button>
+                    {message && (
+                        <Alert severity="success" sx={{ marginTop: 2 }}>
+                            {message}
+                        </Alert>
+                    )}
+                </form>
+            </Paper>
+        </Container>
     );
 };
 
