@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Mark this component as a client component
 
 import React from 'react';
 import { Button, AppBar, Toolbar, Typography } from '@mui/material';
@@ -9,6 +9,12 @@ const Navbar = () => {
 
     const handleNavigation = (path: string) => {
         router.push(path); // Navigate to the specified path
+    };
+
+    const handleLogout = () => {
+        // Implement logout logic here (e.g., clearing auth state)
+        // Redirect to login page
+        router.push('/login');
     };
 
     return (
@@ -22,7 +28,7 @@ const Navbar = () => {
                 <Button color="inherit" onClick={() => handleNavigation('/settings')}>
                     Settings
                 </Button>
-                <Button color="inherit" onClick={() => handleNavigation('/login')}>
+                <Button color="inherit" onClick={handleLogout}>
                     Logout
                 </Button>
             </Toolbar>

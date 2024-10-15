@@ -1,25 +1,25 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import HomeContent from '../components/HomeContent';
 
 const HomePage = () => {
     const router = useRouter();
-    const [isAuthenticated, setIsAuthenticated] = useState(false); // Track authentication state
 
     useEffect(() => {
-        // Simulating authentication check (you can replace this with real authentication logic)
-        const token = localStorage.getItem("authToken"); // Example: check for auth token
-        if (token) {
-            setIsAuthenticated(true);
+        // Check for the authentication token
+        const token = localStorage.getItem("authToken"); // Check for auth token
+        if (!token) {
+            // If there is no token, redirect to /login
+            router.push('/login');
         } else {
-            router.push('/login'); // Redirect to login page if not authenticated
+            // If the token exists, redirect to /profile
+            router.push('/profile');
         }
     }, [router]);
 
-    // Render original homepage content if authenticated
-    return isAuthenticated ? <HomeContent /> : null; // Render nothing while redirecting
+    // Return null while redirecting
+    return null; 
 };
 
 export default HomePage;

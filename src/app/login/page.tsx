@@ -12,9 +12,12 @@ const LoginPage = () => {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        const storedPassword = localStorage.getItem("userPassword"); // Retrieve password from local storage
-        if (username === 'genvoice' && password === storedPassword) {
-            router.push('/'); // Redirect to main page on successful login
+        const storedUsername = 'genvoice';
+        const storedPassword = 'GenVoice123!';
+
+        if (username === storedUsername && password === storedPassword) {
+            localStorage.setItem("authToken", "your_auth_token"); // Set the auth token
+            router.push('/profile'); // Redirect to the profile page on successful login
         } else {
             setError('Invalid username or password');
         }
