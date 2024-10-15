@@ -2,35 +2,38 @@
 
 import React from 'react';
 import { Button, AppBar, Toolbar, Typography } from '@mui/material';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation'; // Import usePathname
 
 const Navbar = () => {
-    const router = useRouter(); // Use router for navigation
-
-    const handleNavigation = (path: string) => {
-        router.push(path); // Navigate to the specified path
-    };
+    const pathname = usePathname(); // Get the current pathname
 
     const handleLogout = () => {
-        // Implement logout logic here (e.g., clearing auth state)
-        // Redirect to login page
-        router.push('/login');
+        // Clear the token from local storage and redirect to the login page
+        localStorage.removeItem("authToken"); 
+        window.location.href = '/login'; // Redirect to login page
     };
 
     return (
         <AppBar position="static" sx={{ background: 'black' }}>
             <Toolbar>
-                <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                    <Button color="inherit" onClick={() => handleNavigation('/')}>
-                        Home
-                    </Button>
-                </Typography>
-                <Button color="inherit" onClick={() => handleNavigation('/settings')}>
-                    Settings
-                </Button>
-                <Button color="inherit" onClick={handleLogout}>
-                    Logout
-                </Button>
+                {pathname === '/login' ? (
+                    // Render nothing or placeholder on login page
+                    <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                        {/* You can place a placeholder here if desired */}
+                        GenVoice Profile Login
+                    </Typography>
+                ) : (
+                    // Render normal Navbar contents for other pages
+                    <>
+                        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                            <Button color="inherit" href="/">Profile</Button>
+                        </Typography>
+                        <Button color="inherit" href="/settings">Settings</Button>
+                        <Button color="inherit" onClick={handleLogout}>
+                            Logout
+                        </Button>
+                    </>
+                )}
             </Toolbar>
         </AppBar>
     );
