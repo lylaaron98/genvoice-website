@@ -12,6 +12,8 @@ import {
     CardContent,
     Divider,
 } from "@mui/material";
+import LinkedInIcon from '@mui/icons-material/LinkedIn'; // Import LinkedIn icon
+import GitHubIcon from '@mui/icons-material/GitHub'; // Import GitHub icon
 
 const HomeContent = () => {
     return (
@@ -24,10 +26,20 @@ const HomeContent = () => {
                     +65 9366 1311 • lyl.aaron.98@gmail.com
                 </Typography>
                 <Typography variant="h6" gutterBottom>
-                    <Button href="https://linkedin.com/in/aaron-lee-b832431b3" target="_blank" color="primary" sx={{ mr: 1 }}>
+                    <Button 
+                        href="https://linkedin.com/in/aaron-lee-b832431b3" 
+                        target="_blank" 
+                        color="primary"
+                        startIcon={<LinkedInIcon />}
+                    >
                         LinkedIn
                     </Button>
-                    <Button href="https://github.com/lylaaron98" target="_blank" color="primary">
+                    <Button 
+                        href="https://github.com/lylaaron98" 
+                        target="_blank" 
+                        color="primary"
+                        startIcon={<GitHubIcon />}
+                    >
                         GitHub
                     </Button>
                 </Typography>
